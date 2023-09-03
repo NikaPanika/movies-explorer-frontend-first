@@ -8,16 +8,16 @@ const MoviesCardList = ({isSaved}) => {
     const [ amountOfCards, setAmountOfCards ] = useState(12);
     const [ isAllCards, setIsAllCards ] = useState(false);
   
-    function detectionInitialNumber() {
+    function setInitialNumber() {
       const windowWidth = window.innerWidth;
   
-      if (windowWidth > 1024) {
+      if (windowWidth >= 1024) {
         setAmountOfCards(12)
       };
-      if ((windowWidth > 768) && (windowWidth <= 1024)) {
+      if ((windowWidth >= 768) && (windowWidth < 1024)) {
         setAmountOfCards(8)
       };
-      if (windowWidth <= 768) {
+      if (windowWidth < 768) {
         setAmountOfCards(5)
       };
   
@@ -46,9 +46,9 @@ const MoviesCardList = ({isSaved}) => {
   
     useEffect(() => {
   
-      detectionInitialNumber()
+      setInitialNumber()
   
-    },[])
+    }, [])
     
   return (
     <section className="cards">

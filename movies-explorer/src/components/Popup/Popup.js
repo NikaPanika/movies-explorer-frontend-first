@@ -9,13 +9,13 @@ function Popup({ isOpen, onClose }) {
                 <button className="popup__close-button" type="button" onClick={onClose}></button>
                 <div className="popup__menu">
                     <div className="popup__navigation">
-                        <NavLink className="popup__navlink" to="/movies" >Главная</NavLink>
-                        <NavLink className="popup__navlink" to="/movies" >Фильмы</NavLink>
-                        <NavLink className="popup__navlink" to="/saved-movies" >Сохранённые фильмы</NavLink>
+                        <NavLink className="popup__navlink" to="/" onClick={onClose}>Главная</NavLink>
+                        <NavLink className="popup__navlink" to="/movies" onClick={onClose}>Фильмы</NavLink>
+                        <NavLink className="popup__navlink" to="/saved-movies" onClick={onClose}>Сохранённые фильмы</NavLink>
                     </div>
 
                     <div className="popup__profile">
-                        <NavLink className="popup__navlink last" to="/profile" >
+                        <NavLink className="popup__navlink last" to="/profile" onClick={onClose}>
                             <span className="navigation__account">Аккаунт</span>
                         </NavLink>
                         <button className="popup__menu-button" />

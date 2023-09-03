@@ -7,16 +7,17 @@ function MoviesCard({
 
     return (
         <section className="card">
-            <a className="card__trailer" href='#1'>
+            <div className="card__container">
                 <img className="card__image" src={film.image} alt={film.name} />
                 <button className={`
                 ${film.isAdd && !isSaved ? ' card__button_saved' : ''}
                 ${!film.isAdd && !isSaved ? ' card__button_unsaved' : ''}
                 ${isSaved ? ' card__button_remove' : ''}`
-            } type="button">
-            </button>
-            </a>
-            
+                } type="button">
+                </button>
+            </div>
+
+
 
             <div className="card__info">
                 <h2 className="card__title">

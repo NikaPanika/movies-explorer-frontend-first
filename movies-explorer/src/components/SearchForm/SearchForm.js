@@ -14,7 +14,7 @@ const SearchForm = () => {
         <form className="search">
             <div className="search__container">
                 <img className="search__lens" src={lens} alt="lens"/>
-                <input className="search__input" placeholder="Фильм" type="text" value='' required />
+                <input className="search__input" placeholder="Фильм" type="text" defaultValue='' required />
                 <button type="submit" className="search__button" >Найти</button>
             </div>
             <div className="search__short-films">

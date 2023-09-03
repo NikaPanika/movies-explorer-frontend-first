@@ -29,20 +29,27 @@
 }
 
 @media screen and (min-width: 768px) {
-    .cadrs {
-        margin: 0 30px;
+    .cards {
+        padding-top: 80px;
+        margin: 109px 30px 0;
+    }
+
+    .cards__more {
+        min-width: 320px;
+        min-height: 36px;
     }
 
     .cards__list {
         grid-template-columns: repeat(2, auto);
+        column-gap: 30px;
     }
 
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
 
-    .cadrs {
-        margin: 0 70px;
+    .cards {
+        margin: 70px 70px;
     }
 
     .cards__list {

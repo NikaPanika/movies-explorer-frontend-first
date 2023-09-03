@@ -3,7 +3,6 @@
     flex-direction: column;
     position: relative;
     margin-bottom: 40px;
-    z-index: 1;
 }
 
 .card__info {
@@ -38,8 +37,26 @@
     vertical-align: middle;
 }
 
+.card__container {
+    position: relative;
+}
+
+.card__image:hover {
+    cursor: pointer;
+}
+
+.card__image:hover+.card__button_unsaved {
+    display: block;
+    cursor: pointer;
+}
+
+.card__button_unsaved:hover {
+    cursor: pointer;
+    display: block;
+}
+
 .card__image {
-    width: 100%;
+    max-width: 300px;
     position: relative;
     border-radius: 6px;
 }
@@ -58,13 +75,12 @@
     display: none;
 }
 
-
-.card__image:hover+.card__button_unsaved{
-    display: block;
-}
-
 .card__button_unsaved:before {
     content: 'Сохранить';
+}
+
+.card__container {
+    position: relative;
 }
 
 .card__button_saved {
@@ -75,7 +91,6 @@
     height: 21px;
     border: none;
     border-radius: 50%;
-    content: 'Сохранить';
     background-image: url('../../images/save-btn.svg');
     background-repeat: no-repeat;
     background-color: #FF4062;
@@ -94,6 +109,9 @@
     height: 21px;
     background-image: url('../../images/close-btn.svg');
     background-repeat: no-repeat;
+    border: none;
+    border-radius: 50%;
+    vertical-align: middle;
 }
 
 .card__button_remove:hover {
@@ -101,30 +119,57 @@
     opacity: .7;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (min-width: 768px) {
 
-    /*  .card {
-        max-width: 342px;
-    } */
+    .card {
+        margin-bottom: 47px;
+    }
 
-}
-
-@media screen and (max-width: 640px) {
-
-    /*   .card {
-        max-width: 300px;
+    .card__info {
+        margin-top: 14px;
     }
 
     .card__title {
-        font-size: 12px;
+        font-size: 13px;
     }
 
-    .card__duration {
-        font-size: 10px;
+    .card__image {
+        max-width: 339px;
     }
 
-    .card__button {
-        font-size: 11px;
-    } */
+    .card__button_unsaved {
+        top: 14px;
+        right: 14px;
+    }
+
+    .card__button_saved {
+        top: 14px;
+        right: 14px;
+    }
+
+    .card__button_remove {
+        top: 14px;
+        right: 14px;
+    }
+
+}
+
+@media screen and (min-width: 1280px) {
+
+    .card {
+        margin-bottom: 60px;
+    }
+
+    .card__info {
+        margin-top: 25px;
+    }
+
+    .card__title {
+        font-size: 13px;
+    }
+
+    .card__image {
+        max-width: 100%;
+    }
 
 }

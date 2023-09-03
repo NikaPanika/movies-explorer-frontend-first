@@ -44,6 +44,10 @@
     border-bottom: 0;
 }
 
+.portfolio__link:hover{
+opacity: 0.7;
+}
+
 .portfolio__text {
     font-size: 18px;
     font-style: normal;
@@ -79,7 +83,7 @@
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
     .portfolio {
         margin-left: 70px;
         margin-right: 70px;

@@ -10,8 +10,12 @@
     font-size: 10px;
     font-weight: 500;
     line-height: 16px;
-    margin-right: 14px;
     text-decoration: none;
+    margin-right: 14px;
+}
+
+.navigation__link:last-child{
+    margin-right: 0;
 }
 
 .navigation__link:hover {
@@ -72,7 +76,8 @@
     width: 44px;
     height: 44px;
     display: block;
-    margin-right: 30px;
+    cursor: pointer;
+    margin-right: 16px;
 }
 
 .menu-burger span,
@@ -104,6 +109,12 @@
 
 
 @media screen and (min-width: 768px) {
+    .navigation {
+        display: flex;
+        align-items: center;
+        margin-right: 0;
+    }
+
     .navigation__entrance {
         height: 32px;
         min-width: 76px;
@@ -114,9 +125,13 @@
         font-size: 12px;
     }
 
+    .navigation__link:last-child{
+        margin-right: 0;
+    }
+    
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
     .navigation__menu {
         display: flex;
     }

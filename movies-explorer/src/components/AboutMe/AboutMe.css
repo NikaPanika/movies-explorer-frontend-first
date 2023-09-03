@@ -1,13 +1,13 @@
 .aboutme {
     padding-left: 18px;
     padding-right: 18px;
+    padding-top: 70px;
 }
 
 .aboutme__title {
     margin: 0;
     font-size: 18px;
     letter-spacing: -0.72px;
-    margin-top: 70px;
     padding-bottom: 28px;
     border-bottom: 1px solid #000;
     text-align: left;
@@ -74,12 +74,12 @@
     .aboutme {
         padding-left: 50px;
         padding-right: 50px;
+        padding-top: 90px;
     }
     
     .aboutme__title {
         font-size: 22px;
         letter-spacing: -0.88px;
-        margin-top: 90px;
         padding-bottom: 23px;
         text-align: left;
     }
@@ -128,14 +128,11 @@
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
     .aboutme {
         padding-left: 70px;
         padding-right: 70px;
-    }
-    
-    .aboutme__title {
-        margin-top: 110px;
+        padding-top: 110px;
     }
     
     .aboutme__container {
