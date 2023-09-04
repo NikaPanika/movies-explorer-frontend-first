@@ -1,7 +1,7 @@
 import './Navigation.css';
 import { NavLink } from 'react-router-dom';
 
-const Navigation = ({ isLogged, onBurderClick }) => {
+const Navigation = ({ isLogged, onBurgerClick }) => {
 
     return (
         <nav className="navigation">
@@ -26,7 +26,7 @@ const Navigation = ({ isLogged, onBurderClick }) => {
                         </div>
                     </div>
 
-                    <div className="menu-burger" onClick={onBurderClick}>
+                    <div className="menu-burger" onClick={onBurgerClick}>
                         <span></span>
                     </div>
                     

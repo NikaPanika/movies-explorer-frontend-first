@@ -1,7 +1,10 @@
 import './Register.css'
 import Form from '../Form/Form'
 
-const Register = ({ serverError }) => {
+const Register = ({ serverError}) => {
+
+
+    
     return (
         <div className="register">
             <Form

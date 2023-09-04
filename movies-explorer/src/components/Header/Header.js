@@ -1,16 +1,18 @@
 import './Header.css';
 import logo from '../../images/logo.svg';
 import Navigation from '../Navigation/Navigation';
-import { useLocation } from 'react-router-dom';
+import { useLocation, NavLink } from 'react-router-dom';
 
-const Header = ({ isLogged, onBurderClick}) => {
+const Header = ({ isLogged, onBurgerClick }) => {
 
     const { pathname } = useLocation();
 
     return (
-        <header className={`header ${ pathname === '/' ? ' header__main' : ''}`}>
-            <img className="header__logo" src={logo} alt="Логотип"/>
-            <Navigation isLogged={isLogged} onBurderClick={onBurderClick}/>
+        <header className={`header ${pathname === '/' ? ' header__main' : ''}`}>
+            <NavLink className="header__link" to="/">
+                <img className="header__logo" src={logo} alt="Логотип" />
+            </NavLink>
+            <Navigation isLogged={isLogged} onBurgerClick={onBurgerClick} />
         </header>
     );
 };

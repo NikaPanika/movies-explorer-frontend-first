@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -10,16 +10,14 @@ import Movies from '../Movies/Movies';
 import Profile from '../Profile/Profile';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 function App() {
-  //const [currentUser, setCurrentUser] = useState({});
+
   const [isLogged, setIsLogged] = useState(false);
-  const [isHiddenHeader, setIsHiddenHeader] = useState(true);
-  const [isHiddenFooter, setIsHiddenFooter] = useState(true);
-  //const { pathname } = useLocation();
-  //const [isLoading, setIsLoading] = useState(true);
+  const { pathname } = useLocation();
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [ serverError, setServerError ] = useState('');
+  const [serverError, setServerError] = useState('');
 
   function closePopup() {
     setIsPopupOpen(false);
@@ -39,28 +37,21 @@ function App() {
       setIsLogged(false);
     }
 
-    if(currentPath === '/profile' || currentPath === '/signup' || currentPath === '/signin'){
-      setIsHiddenFooter(false);
-    }
-
-    if(currentPath === '/signup' || currentPath === '/signin'){
-      setIsHiddenHeader(false);
-    }
-
   }, []);
 
   return (
     <div className="App">
-      {isHiddenHeader && <Header isLogged={isLogged} onBurgerClick={handlePopupOpen} />}
+      {(pathname === '/' || pathname === '/movies' || pathname === '/saved-movies' || pathname === '/profile') && <Header isLogged={isLogged} onBurgerClick={handlePopupOpen} />}
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/movies" element={<Movies isSaved={false} />} />
-        <Route path="/saved-movies" element={<Movies isSaved={true}/>} />
+        <Route path="/saved-movies" element={<Movies isSaved={true} />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/signup" element={<Register serverError={serverError}/>} />
+        <Route path="/signup" element={<Register serverError={serverError} />} />
         <Route path="/signin" element={<Login />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
-      { isHiddenFooter && <Footer />}
+      {(pathname === '/' || pathname === '/movies' || pathname === '/saved-movies') && <Footer />}
       <Popup
         isOpen={isPopupOpen}
         onClose={closePopup} />
